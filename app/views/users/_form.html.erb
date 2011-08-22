@@ -1,0 +1,58 @@
+<%= form_for(@user) do |f| %>
+  <% if @user.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@user.errors.count, "error") %> prohibited this user from being saved:</h2>
+
+      <ul>
+      <% @user.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :user_email, 'User ID' %>
+    <br>
+    <%= f.text_field :user_email, :size=>40 %>(*)Must be as a email address!
+  </div>
+  <div class="field">
+    <%= f.label :password , 'Password '%>
+    <br>
+    <%= f.password_field :password, :size=>40 %>(*)
+  </div >
+  <div class="field">
+    <%= f.label :password_confirmation, 'Password Confirm' %>
+    <br>
+    <%= f.password_field :password_confirmation, :size => 40 %>(*)
+  </div>
+  <div class="field">
+    <%= f.label :name, 'User name' %>
+    <br>
+    <%= f.text_field :name , :size => 40 %>(*)
+  </div>
+    <div class="field">
+      <%= f.label :address, 'Address' %>
+      <br>
+      <%= f.text_field :address , :size => 40 %>(*)
+    </div>
+    <div class="field">
+      <%= f.label :phone, 'Phone' %>
+      <br>
+      <%= f.text_field :phone , :size => 40 %>(-*)Phone ,Cell-phone(1)/(2) at least fill 1
+    </div>
+    <div class="field">
+      <%= f.label :cell_phone_1, 'Cell phone(1)' %>
+      <br>
+      <%= f.text_field :cell_phone_1 , :size => 40 %>(-*)
+    </div>
+    <div class="field">
+      <%= f.label :cell_phone_2, 'Cell phone(2)' %>
+      <br>
+      <%= f.text_field :cell_phone_2 , :size => 40 %>(-*)
+    </div>
+
+    <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

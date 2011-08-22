@@ -1,0 +1,62 @@
+<% if notice %>
+<p id="notice" ><%= notice %></p>
+<% end %>
+
+
+<h1>Order Today</h1>
+
+<h2>Order Today : <%= Date.today.strftime("%Y-%m-%d") %></h2>
+
+<table>
+  <tr>
+    <th>Order Id</th>
+    <th>Order Info</th>
+    <th>User Info</th>
+    <th>Line Item</th>
+    <th>Status</th>
+    <th>Action</th>
+  </tr>
+
+<% @order_today_h.each_pair do |key,value| %>
+  <% max_line_number = (value[2].size >= value[0].size) ? value[2].size : value[0].size%>
+  <% max_line_number.times do |t| %>
+  <tr>
+    <td><%= (t == 0) ? key : nil %></td>
+    <td><%= (t <= value[0].size) ? value[0][t] : nil %></td>
+    <td><%= (t <= value[1].size) ? value[1][t] : nil %></td>
+    <td><%= (t <= value[2].size) ? value[2][t] : nil %></td>
+    <td><%=  %></td>
+    <td><%= (t == (max_line_number-1)/2 ) ? link_to("Download Receipt PDF","/admin/download_receipt_pdf?order_id=#{key}") : nil%></td>
+
+  </tr>
+  <%end%>
+<% end %>
+
+</table>
+
+<h3>------------------------->----------  BREAK  ---------->-------------------------</h3>
+
+<h2>Purchase Today(Total) : <%= Date.today.strftime("%Y-%m-%d") %></h2>
+
+
+<table>
+  <tr>
+    <th>Line Item</th>
+    <th>Total</th>
+    <th>Unit</th>
+  </tr>
+
+  <% @purchase_today_h.each_pair do |key,value| %>
+      <tr>
+        <td><%= key %></td>
+        <td><%= value %></td>
+        <td></td>
+      </tr>
+  <% end %>
+</table>
+
+<h3>------------------------->----------  BREAK  ---------->-------------------------</h3>
+
+    <%= link_to 'Download all Receipt PDF' %>  <br>
+    <%= link_to 'Download Purchase PDF' , "/admin/purchase_pdf/"%>
+

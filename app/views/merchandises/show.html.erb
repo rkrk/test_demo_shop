@@ -1,0 +1,35 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Merchandise name:</b>
+  <%= @merchandise.merchandise_name %>
+</p>
+
+<p>
+  <b>Price:</b>
+  <%= @merchandise.price %>
+</p>
+
+<p>
+  <b>Image url:</b>
+  <%= @merchandise.image_url %>
+</p>
+
+<p>
+  <b>Merchandise detail:</b>
+  <%= @merchandise.merchandise_detail %>
+</p>
+
+<p>
+  <b>Production month from:</b>
+  <%= @merchandise.production_month_from %>
+</p>
+
+<p>
+  <b>Production month to:</b>
+  <%= @merchandise.production_month_to %>
+</p>
+
+
+<%= link_to 'Edit', edit_merchandise_path(@merchandise) %> |
+<%= link_to 'Back', merchandises_path %>

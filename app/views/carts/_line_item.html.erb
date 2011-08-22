@@ -1,0 +1,5 @@
+  <tr>
+    <td><%=l.merchandise.merchandise_name %>&times;<%=l.quantity%></td>
+    <td class="item_price" ><%= number_to_currency(l.total_price) %></td>
+    <td><%=link_to 'X', l, :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>

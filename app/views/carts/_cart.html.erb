@@ -1,0 +1,19 @@
+<% unless @cart.line_items.empty? %>
+
+<div class="cart_title">Your Cart</div>
+
+<table>
+  
+  <%=render(@cart.line_items)%>
+  
+  <tr class="total_line">
+    <td colspan="1">Total</td>
+    <td class="total_cell"><%= number_to_currency(@cart.total_price) %></td>
+  </tr>
+
+</table>
+
+<%= button_to'Check out', new_order_path, :method => :get%>
+<%= button_to'Empty cart', @cart, :confirm => "Are you sure?", :method => :delete%>
+
+<%end%>

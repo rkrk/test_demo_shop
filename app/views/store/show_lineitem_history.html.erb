@@ -1,0 +1,25 @@
+
+<h3>Order id : <%= @lineitem_history[0].order_id %></h3>
+
+<table>
+  <tr>
+    <th>Merchandise ID</th>
+    <th>Merchandise name</th>
+    <th>Price</th>
+    <th>Quantity</th>
+  </tr>
+
+<% @lineitem_history.each do |lh| %>
+  <tr>
+    <th><%= lh.merchandise_id %></th>
+    <th><%= Merchandise.find(lh.merchandise_id).merchandise_name %></th>
+    <th><%= Merchandise.find(lh.merchandise_id).price %></th>
+    <th><%= lh.quantity %></th>
+  </tr>
+
+
+<% end %>
+</table>
+
+
+<%= link_to "Back to history", {:controller => "store", :action => "order_history"}%>

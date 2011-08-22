@@ -1,0 +1,14 @@
+.bundle
+db/*.sqlite3
+log/*.log
+tmp/
+.idea/
+pdf/
+
+*/.idea/
+
+*.txt
+*.log
+*.pdf
+
+

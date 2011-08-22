@@ -1,0 +1,30 @@
+<% if notice %>
+<p id="notice" ><%= notice %></p>
+<% end %>
+
+
+<div class="depot_form" >
+	<% if flash[:alert] %>
+		<p id="notice" ><%= flash[:alert] %></p>
+	<% end %>
+	
+	<%= form_tag do %>
+	  <fieldset>
+		<legend>Please Login</legend>
+          <table>
+            <tr>
+              <td><label for="name" >Name:</label>
+              <td><%= text_field_tag :name, params[:name] %></td>
+            </tr>
+            <tr>
+              <td><label for="password" >Password:</label></td>
+              <td><%= password_field_tag :password, params[:password] %></td>
+            </tr>
+          </table>
+		<div>
+		  <%= submit_tag "Login" %>
+		</div>
+	  </fieldset>
+	<% end %>
+	
+</div>

@@ -1,0 +1,35 @@
+<h1>Listing merchandises</h1>
+
+<table>
+  <tr>
+    <th>Merchandise name</th>
+    <th>Price</th>
+    <th>Image url</th>
+    <th>Origin</th>
+    <th>Merchandise detail</th>
+    <th>Production month from</th>
+    <th>Production month to</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @merchandise.each do |m| %>
+  <tr>
+    <td><%= m.merchandise_name %></td>
+    <td><%= m.price %></td>
+    <td><%= m.image_url %></td>
+    <td><%= m.origin %></td>
+    <td><%= m.merchandise_detail %></td>
+    <td><%= m.production_month_from %></td>
+    <td><%= m.production_month_to %></td>
+    <td><%= link_to 'Show', m %></td>
+    <td><%= link_to 'Edit', edit_merchandise_path(m) %></td>
+    <td><%= link_to 'Destroy', m, :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Merchandise', new_merchandise_path %>

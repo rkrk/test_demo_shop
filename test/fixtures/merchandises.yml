@@ -1,0 +1,46 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  machandise_name: cucumber
+  price: 1.5
+  image_url: /images/cucumber.jpeg
+  machandise_detail: The cucumber (Cucumis sativus) is a widely cultivated plant in the gourd family Cucurbitaceae, which includes squash, and in the same genus as the muskmelon. 
+  origin:liuzhou
+  production_month_from: 5
+  production_month_to: 10
+
+two:
+  machandise_name: grape
+  price: 12.5
+  image_url: /images/grape.jpeg
+  machandise_detail: A grape is a non-climacteric fruit, specifically a berry, that grows on the perennial and deciduous woody vines of the genus Vitis. Grapes can be eaten raw or they can be used for making jam, juice, jelly, vinegar, wine, grape seed extracts, raisins, molasses and grape seed oil.
+  origin:liuzhou
+  production_month_from: 4
+  production_month_to: 9
+
+three:
+  machandise_name: eggplant
+  price: 3.55
+  image_url: /images/eggplant.jpeg
+  machandise_detail: The eggplant, aubergine, melongene, brinjal, or guinea squash (Solanum melongena) is a plant of the family Solanaceae (also known as the nightshades) and genus Solanum. 
+  origin:liuzhou
+  production_month_from: 2
+  production_month_to: 8
+  
+four:
+  machandise_name: raj
+  price: 0.05
+  image_url: /images/raj.jpeg
+  machandise_detail: Raj from The big bang. angleeÅCvalley valley diffigo do dog do dem. 
+  origin:liuzhou
+  production_month_from: 1
+  production_month_to: 12
+
+five:
+  machandise_name: raputa robot
+  price: 100.00
+  image_url: /images/raputa.jpeg
+  machandise_detail: raputa robot. 
+  origin:ghibli
+  production_month_from: 1
+  production_month_to: 12

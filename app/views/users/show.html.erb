@@ -1,0 +1,59 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>User ID:</b>
+  <%= @user.user_email %>
+</p>
+
+<p>
+  <b>Name:</b>
+  <%= @user.name %>
+</p>
+
+<p>
+  <b>Address:</b>
+  <%= @user.address %>
+</p>
+
+<p>
+  <b>Phone:</b>
+  <%= @user.phone %>
+</p>
+
+<p>
+  <b>Cell phone(1):</b>
+  <%= @user.cell_phone_1%>
+</p>
+
+<p>
+  <b>Cell phone(2):</b>
+  <%= @user.cell_phone_2 %>
+</p>
+
+<p>
+  <b>Role:</b>
+  <%= @user.role %>
+</p>
+
+<p>
+  <b>Hashed password:</b>
+  <%= @user.hashed_password %>
+</p>
+
+<p>
+  <b>Hashed address (for register confirm):</b>
+  <%= @user.hashed_address %>
+</p>
+
+<p>
+  <b>Salt:</b>
+  <%= @user.salt %>
+</p>
+
+<p>
+  <b>Confirm:</b>
+  <%= @user.confirm %>
+</p>
+
+<%= link_to 'Edit', edit_user_path(@user) %> |
+<%= link_to 'Back', users_path %>

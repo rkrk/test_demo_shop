@@ -1,0 +1,42 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Name:</b>
+  <%= @order.name %>
+</p>
+
+<p>
+  <b>Address:</b>
+  <%= @order.address %>
+</p>
+
+<p>
+  <b>Email:</b>
+  <%= @order.email %>
+</p>
+<p>
+  <b>Phone:</b>
+  <%= @order.phone %>
+</p>
+<p>
+  <b>Cell-phone:</b>
+  <%= @order.cell_phone %>
+</p>
+<p>
+  <b>Pay type:</b>
+  <%= @order.pay_type %>
+</p>
+<p>
+  <b>Delivery Day:</b>
+  <%= @order.deli_day %>
+</p>
+<p>
+<p>
+  <b>Delivery Time:</b>
+  <%= @order.deli_time %>
+</p>
+  <b>Status</b>
+  <%= @order.status %>
+</p>
+<%= link_to 'Edit', edit_order_path(@order) %> |
+<%= link_to 'Back', orders_path %>
