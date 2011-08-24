@@ -34,7 +34,6 @@
 
 </table>
 
-<h3>------------------------->----------  BREAK  ---------->-------------------------</h3>
 
 <h2>Purchase Today(Total) : <%= Date.today.strftime("%Y-%m-%d") %></h2>
 
@@ -55,8 +54,7 @@
   <% end %>
 </table>
 
-<h3>------------------------->----------  BREAK  ---------->-------------------------</h3>
-
+<br>
     <%= link_to 'Download all Receipt PDF' %>  <br>
-    <%= link_to 'Download Purchase PDF' , "/admin/purchase_pdf/"%>
+    <%= link_to 'Download Purchase PDF' , "/admin/download_purchase_pdf"%>
 

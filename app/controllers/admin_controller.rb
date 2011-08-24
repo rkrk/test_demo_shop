@@ -37,7 +37,7 @@ class AdminController < ApplicationController
       tmp_u = User.find_by_user_email(value)
       user_info_a = [tmp_u.name]
 
-      #抽取key对应的各项LineItem，将LineItem中的商品id转化成商品名
+      #抽取key对应的各项LineItem，将LineItem中的商品id转为商品名
       LineItem.find_all_by_order_id(key).each do |l|
 
         tmp_m = Merchandise.find_by_id(l["merchandise_id"])

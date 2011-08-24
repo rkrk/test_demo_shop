@@ -7,7 +7,7 @@
   <tr>
     <th>User ID</th>
     <th>Name</th>
-    <th>Hashed password</th>
+    <!--<th>Hashed password</th>-->
     <!--<th>Hashed address</th>-->
     <th>Role</th>
     <th>Confirm</th>
@@ -20,7 +20,7 @@
   <tr>
     <td><%= user.user_email %></td>
     <td><%= user.name %></td>
-    <td><%= user.hashed_password %></td>
+    <!--<td><%= user.hashed_password %></td>-->
     <!--<td><%= user.hashed_address %></td>-->
     <td><%= user.role %></td>
     <td><%= user.confirm %></td>
@@ -32,6 +32,7 @@
 <% end %>
 </table>
 
+<%= paginate @users %>
 <br />
 
 <%= link_to 'New User', new_user_path %>

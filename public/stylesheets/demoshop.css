@@ -1,6 +1,7 @@
 /* Global styles */
 a {
     margin-left: 10px;
+    margin-right: 10px;
     color: #000;
 }
 a:visited { color: #666; }
@@ -65,7 +66,7 @@ legend{
   /*border-bottom: 1px dotted #3333ff;*/
 }
 
-#store table,th,tr,td{
+#store td{
   border: 1px dotted #0000ff;
 }
 
@@ -82,8 +83,9 @@ legend{
 /*Accordion for category menu */
 dl
 {
-	padding: 10px;
 	min-width: 960px;
+    width: 55em;
+    padding-left: 1em;
 }
 	dl dt
 	{
@@ -91,6 +93,7 @@ dl
 		-moz-border-radius: 5px;
 		border: 1px solid #cccccc;
 		margin: 0;
+        width: 55em;
 	}
 		dl dt a
 		{
@@ -106,6 +109,7 @@ dl
 		height: 0;
 		overflow: hidden;
 		-webkit-transition: height 1s ease;
+        width: 58em;
 	}
 		dl dd p
 		{

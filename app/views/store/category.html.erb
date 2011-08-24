@@ -6,7 +6,7 @@
 <% @category.each do |c|  %>
   <dl>
     <dt><%=link_to "#{c.category}", "/store/category/##{c.category}" %></dt>
-    <dd id = "vegetable">
+    <%= raw "<dd id = #{c.category} >"%>
         <% @store_show_merchandise.each do |m| %>
             <% if (Time.now.month >= m.production_month_from && Time.now.month <= m.production_month_to && m.category == c.category )  %>
                 <div class="entry" >

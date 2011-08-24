@@ -5,7 +5,7 @@ class UsersController < ApplicationController
   # GET /users
   # GET /users.xml
   def index
-    @users = User.order(:name)
+    @users = User.order(:created_at).page(params[:page]).per(5)
 
     respond_to do |format|
       format.html # index.html.erb

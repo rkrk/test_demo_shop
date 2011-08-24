@@ -4,6 +4,7 @@ log/*.log
 tmp/
 .idea/
 pdf/
+app/views/kaminari/
 
 */.idea/
 

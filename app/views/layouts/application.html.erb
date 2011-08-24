@@ -19,13 +19,11 @@
     <%= link_to 'Register', "/register/" %> <br/>
     <%= link_to 'login', login_url %>  <br/>
 
+    <% if session[:user_id] %>
     <br/>
 
     <%= link_to 'Home',store_url%> <br>
     <%= link_to 'Category', "/store/category/"%><br /> <br>
-
-
-    <% if session[:user_id] %>
 
     <%= link_to 'Order history', {:controller=>"store", :action=>"order_history"}%><br />
 
@@ -60,7 +58,7 @@
     <%= link_to "Privacy"   %> |
     <%= link_to "Advertise" %> |
     <%= link_to "Site map"  %> |
-    <%= link_to "FAQ"       %> |
+    <%= link_to "FAQ"        %> |
     <%= link_to "Contact us"%>
     <br>
     <div id="Copyright">

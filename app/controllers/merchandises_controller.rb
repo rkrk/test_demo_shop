@@ -2,7 +2,7 @@ class MerchandisesController < ApplicationController
   # GET /store_show_merchandise
   # GET /store_show_merchandise.xml
   def index
-    @merchandise = Merchandise.all
+    @merchandise = Merchandise.page(params[:page]).per(3)
 
     respond_to do |format|
       format.html # index.html.erb

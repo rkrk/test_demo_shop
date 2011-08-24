@@ -4,9 +4,9 @@
   <tr>
     <th>Merchandise name</th>
     <th>Price</th>
-    <th>Image url</th>
+    <!--<th>Image url</th>-->
     <th>Origin</th>
-    <th>Merchandise detail</th>
+    <!--<th>Merchandise detail</th>-->
     <th>Production month from</th>
     <th>Production month to</th>
     <th></th>
@@ -18,9 +18,9 @@
   <tr>
     <td><%= m.merchandise_name %></td>
     <td><%= m.price %></td>
-    <td><%= m.image_url %></td>
+    <!--<td><%= m.image_url %></td>-->
     <td><%= m.origin %></td>
-    <td><%= m.merchandise_detail %></td>
+    <!--<td><%= m.merchandise_detail %></td>-->
     <td><%= m.production_month_from %></td>
     <td><%= m.production_month_to %></td>
     <td><%= link_to 'Show', m %></td>
@@ -30,6 +30,7 @@
 <% end %>
 </table>
 
-<br />
+<%= paginate @merchandise %>
+<br>
 
 <%= link_to 'New Merchandise', new_merchandise_path %>

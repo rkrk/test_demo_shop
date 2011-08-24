@@ -6,7 +6,7 @@ class OrdersController < ApplicationController
     # GET /orders
     # GET /orders.xml
   def index
-    (params[:today] == nil )? @orders = Order.all : @order = Order.today.all
+    (params[:today] == nil )? @orders = Order.page(params[:page]).per(10) : @order = Order.today.page(params[:page]).per(10)
       #paginate :page=>params[:page], :order=>'created_at desc', :per_page=>10
 
 
