@@ -43,9 +43,8 @@
 <%= paginate @orders %>
 
 <br />
+<!--<%= link_to 'New Order', new_order_path %>-->
 
-<%= link_to 'New Order', new_order_path %>
-
-<br>
 <%= link_to 'Check all Order of today', {:controller => "admin", :action => "check_today_order"} %>
+<br>
 <%= link_to 'Uncheck all Order of today', {:controller => "admin", :action => "uncheck_today_order"} %>
