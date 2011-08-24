@@ -16,8 +16,7 @@ class StoreController < ApplicationController
 
   def order_history
     @user_info = User.find(session[:user_id])
-
-    @order_history = Order.find_all_by_email(@user_info.user_email)
+    @order_history = Order.where(:email => @user_info.user_email).page(params[:page]).per(10)
 
   end
 

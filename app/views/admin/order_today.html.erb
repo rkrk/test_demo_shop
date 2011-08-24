@@ -34,6 +34,7 @@
 
 </table>
 
+<br><%= link_to 'Download all Receipt PDF' ,"/admin/download_receipt_pdf_all"%><br>
 
 <h2>Purchase Today(Total) : <%= Date.today.strftime("%Y-%m-%d") %></h2>
 
@@ -55,6 +56,5 @@
 </table>
 
 <br>
-    <%= link_to 'Download all Receipt PDF' %>  <br>
-    <%= link_to 'Download Purchase PDF' , "/admin/download_purchase_pdf"%>
+<%= link_to 'Download Purchase PDF' , "/admin/download_purchase_pdf"%>
 

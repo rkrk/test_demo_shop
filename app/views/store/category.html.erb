@@ -4,27 +4,34 @@
 
 
 <% @category.each do |c|  %>
+  <div class="" >
   <dl>
     <dt><%=link_to "#{c.category}", "/store/category/##{c.category}" %></dt>
     <%= raw "<dd id = #{c.category} >"%>
         <% @store_show_merchandise.each do |m| %>
             <% if (Time.now.month >= m.production_month_from && Time.now.month <= m.production_month_to && m.category == c.category )  %>
-                <div class="entry" >
+
+                  <div class="entry" >
                     <%= image_tag (m.image_url) %>
                     <h3><%= m.merchandise_name %></h3>
                     <%= sanitize(m.merchandise_detail) %>
+                  </div>
 
-                    <div class="price_line" >
-                      <span class="price" ><%= m.price %></span>
-                      <% form_tag line_items_path(:merchandise_id=>m),:remote => true do %>
-                        <%= number_field_tag "quantity_from_web", nil %>
-                        <%= submit_tag "Add to Cart" %>
-                      <% end %>
-                    </div>
+                  <div class="price_line" >
+                    <span class="price" ><%= m.price %></span>
+                  </div>
+                <div class="entry">
+                  <% form_tag line_items_path(:merchandise_id=>m),:remote => true do %>
+                                  <%= number_field_tag "quantity_from_web", nil %>
+                                  <%= submit_tag "Add to Cart" %>
+                  <% end %>
                 </div>
+
             <% end %>
 
         <% end %>
-    </dd>
+    <%= raw "<dd>" %>
   </dl>
-<%end  %>
+</div>
+
+<% end %>

@@ -68,6 +68,9 @@ class AdminController < ApplicationController
     send_file(file_path)
 
   end
+  def download_receipt_pdf_all
+
+  end
   def download_purchase_pdf
     pdf_home = "#{RAILS_ROOT}/pdf/purchase/"
     today_dir = Time.now.strftime("%Y-%m-%d").to_s + "/"
