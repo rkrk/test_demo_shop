@@ -11,7 +11,7 @@ class SessionsController < ApplicationController
         if User.is_admin?(params[:name])
           redirect_to admin_url
         else
-          redirect_to store_url
+          redirect_to "/store/category"
         end
       else
         redirect_to login_url, :alert => "Invalid user/password combination"

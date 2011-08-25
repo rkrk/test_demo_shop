@@ -1,8 +1,12 @@
 class StoreController < ApplicationController
-  before_filter :need_login  ,:except => ["index"]
+
+  layout "toppage", :only => ["index"]
+  #layout "application", :only => ["category"]
+
+  before_filter :need_login, :except => ["index"]
 
   def index
-    #@store_shorrent_cart
+    #@store_corrent_cart
     #@new_line_item w_merchandise = Merchandise.all
     #@cart = cu= LineItem.new
   end

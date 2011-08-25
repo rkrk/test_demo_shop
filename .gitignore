@@ -11,5 +11,5 @@ app/views/kaminari/
 *.txt
 *.log
 *.pdf
-
+*.db
 

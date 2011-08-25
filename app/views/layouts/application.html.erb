@@ -2,22 +2,79 @@
 <html>
 <head>
   <title>DemoShop</title>
-  <%= stylesheet_link_tag "scaffold"%>
   <%= stylesheet_link_tag "demoshop", :media=>"all" %>
   <%= javascript_include_tag :defaults %>
   <%= csrf_meta_tag %>
 </head>
 
-<body id="store">
-  <div id="header" >
-    <%= image_tag("clockwise.jpeg") %>
-    <%= "Online Supermarket" %>
+<body class="Shopping OffWhite1Background">
+  <div class="ShoppingHeader">
+    <div id="HeaderContainer" class="Header">
+        <div class="FindSection">
+          <%= link_to(image_tag("/images/home/ShoppingLogo.gif"), store_path, {:class => "Logo"}) %>
+        </div>
+      <div class="QuickShopPanel">
+         <%= image_tag "/images/home/QuickShopIconHeader.gif" %>
+      </div>
+
+    </div>
+
   </div>
-  
+
+  <div class="body">
+    <div class="HallTop">
+      <div id="DepartmentNavigatorContainer" class="DepartmentNavigatorContainer">
+
+        <div id="DepartmentTabContent" class="DepartmentTabContent">
+          <div id="DepartmentTabContentTop" class="DepartmentTabContentTop">
+             <%= image_tag "/images/home/Icon13.gif" %>
+          </div>
+          <div id="DepartmentTabMain" class="DepartmentTabMain">
+            <%= link_to "Favourites" ,"/store/Favourites" %>
+          </div>
+        </div>
+
+        <div id="DepartmentTabContent" class="DepartmentTabContent">
+          <div id="DepartmentTabContentTop" class="DepartmentTabContentTop">
+             <%= image_tag "/images/home/Icon13.gif" %>
+          </div>
+          <div id="DepartmentTabMain" class="DepartmentTabMain">
+            <%= link_to "Favourites" ,"/store/Favourites" %>
+          </div>
+        </div>
+
+        <div id="DepartmentTabContent" class="DepartmentTabContent">
+          <div id="DepartmentTabContentTop" class="DepartmentTabContentTop">
+             <%= image_tag "/images/home/Icon13.gif" %>
+          </div>
+          <div id="DepartmentTabMain" class="DepartmentTabMain">
+            <%= link_to "Favourites" ,"/store/Favourites" %>
+          </div>
+        </div>
+        <div id="DepartmentTabContent" class="DepartmentTabContent">
+          <div id="DepartmentTabContentTop" class="DepartmentTabContentTop">
+             <%= image_tag "/images/home/Icon13.gif" %>
+          </div>
+          <div id="DepartmentTabMain" class="DepartmentTabMain">
+            <%= link_to "Favourites" ,"/store/Favourites" %>
+          </div>
+        </div>
+
+
+    </div>
+
+    <div id="ShoppingPageContent" class="PageContent">
+      <%= yield %>
+    </div>
+
+  </div>
+  </div>
+
+
   <div id="sidebar_a">
 
     <%= link_to 'Register', "/register/" %> <br/>
-    <%= link_to 'login', login_url %>  <br/>
+    <%= link_to 'login', login_url %> <br/>
 
     <% if session[:user_id] %>
     <br/>
@@ -27,7 +84,7 @@
 
     <%= link_to 'Order history', {:controller=>"store", :action=>"order_history"}%><br />
 
-      <% if  User.find(session[:user_id]).role == "admin"  %>
+      <% if User.find(session[:user_id]).role == "admin" %>
 
     <br />
       <%= link_to 'Orders', orders_path %><br />
@@ -37,35 +94,22 @@
       <%= link_to 'Users', users_path %><br />
     <br />
 
-      <% end  %>
+      <% end %>
     <%= button_to 'Logout', logout_path, :method => :delete %>
     <% end %>
   </div>
 
   <% if @cart %>
-	  <%= hidden_div_if(@cart.line_items.empty?, :id => "cart") do %>
-	    <%= render @cart%>
-	  <% end %>
+<%= hidden_div_if(@cart.line_items.empty?, :id => "cart") do %>
+<%= render @cart%>
+<% end %>
   <%end%>
 
-  <div id="body">
-    <%= yield %>
-  </div>
-  
-  <div id="footer">
-    <%= link_to "About us"  %> |
-    <%= link_to "Security"  %> |
-    <%= link_to "Privacy"   %> |
-    <%= link_to "Advertise" %> |
-    <%= link_to "Site map"  %> |
-    <%= link_to "FAQ"        %> |
-    <%= link_to "Contact us"%>
-    <br>
-    <div id="Copyright">
-      © myDemoshop Limited, 2011-2011. All rights reserved.
-    </div>
-  </div>
 
+
+
+  <div class="footer">
+  </div>
 
 </body>
 
