@@ -12,6 +12,35 @@ element.style {
 a:visited { color: #666; }
 a:hover { color: #fff; background-color:#000; }
 
+.store h1 {
+  font:  150% sans-serif;
+  color: #226;
+  border-bottom: 3px dotted #3333ff;
+}
+
+.store h2{
+  font:  120% sans-serif;
+  color: #226;
+  border-bottom: 2px dotted #3333ff;
+}
+
+
+.store h3{
+  font-size:  large;
+  color: #226;
+  /*border-bottom: 1px dotted #3333ff;*/
+}
+
+.store .body{
+    font-family: helvetica,arial,helvetica,sans-serif;
+    font-size: 13px;
+    line-height: 18px;
+    padding-top: 1em;
+    padding-left: 13em;
+    width: 60em;
+}
+
+
 div.field, div.actions {
     margin-top: 5px;
     margin-bottom: 10px;
@@ -25,7 +54,7 @@ legend{
 .store {
     background: url("../images/home/Page_bkg.jpg") repeat-x scroll center top #EEE7E0;
     color: #545048;
-    font-family: monaco, arial, helvetica, sans-serif;
+    font-family: helvetica, arial, sans-serif;
     font-size: 13px;
     margin: 0;
     min-width: 1250px;
@@ -50,14 +79,21 @@ legend{
 }
 
 /*store Homepage header*/
-.store .HomepageHeader {
-   height: 63px;
-}
 
+.store .HomepageHeader {
+    clear: both;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    position: relative;
+    height: 63px;
+    top: -10px;
+    width: 1004px;
+    z-index: 10;
+}
 .store .HomepageHeader .logo{
     left: 0;
     padding-top: 15px;
-    /*padding-left: 30px;*/
     position: absolute;
 }
 
@@ -112,7 +148,7 @@ legend{
 }
 
 .store .MainBody .leftPanel .BrowsePane {
-    font-family: monaco;
+    font-family: helvetica;
     font-size: 13px;
     padding-top: 5px;
     text-align: center;
@@ -129,7 +165,7 @@ legend{
 .store .MainBody .bottomPanel .VideoPanel {
     clear: right;
     float: right;
-    font-family: monaco;
+    font-family: helvetica;
     position: relative;
     top: 7px;
     width: 160px;
@@ -160,7 +196,7 @@ legend{
 .store .MainBody .PressPanel {
     background: url("../images/home/Press_bkg.jpg") no-repeat scroll 0 0 transparent;
     color: #545048;
-    font-family: monaco;
+    font-family: helvetica;
     font-size: 14px;
     font-style: italic;
     margin: 50px 0 0;
@@ -178,8 +214,6 @@ legend{
 }
 
 
-
-
 /*store footer panel*/
 .store .FooterPanel {
     background-color: #BCB6AF;
@@ -191,48 +225,6 @@ legend{
     margin-left: auto;
     margin-right: auto;
 }
-
-
-
-.store h1 {
-  font:  150% sans-serif;
-  color: #226;
-  border-bottom: 3px dotted #3333ff;
-}
-
-.store h2{
-  font:  120% sans-serif;
-  color: #226;
-  border-bottom: 2px dotted #3333ff;
-}
-
-
-.store h3{
-  font-size:  large;
-  color: #226;
-  /*border-bottom: 1px dotted #3333ff;*/
-}
-
-.store td{
-  border: 1px dotted #0000ff;
-}
-
-
-.store .body{
-    font-family: monaco,arial,helvetica,sans-serif;
-    font-size: 13px;
-    line-height: 18px;
-    padding-top: 1em;
-    padding-left: 13em;
-    width: 60em;
-}
-
-
-
-
-
-
-
 
 
 

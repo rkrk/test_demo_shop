@@ -11,21 +11,39 @@
         <% @store_show_merchandise.each do |m| %>
             <% if (Time.now.month >= m.production_month_from && Time.now.month <= m.production_month_to && m.category == c.category )  %>
 
-                  <div class="entry" >
+                  <div class="Entry" >
                     <%= image_tag (m.image_url) %>
-                    <h3><%= m.merchandise_name %></h3>
-                    <%= sanitize(m.merchandise_detail) %>
-                  </div>
-
-                  <div class="price_line" >
-                    <span class="price" ><%= m.price %></span>
-                  </div>
-                <div class="entry">
-                  <% form_tag line_items_path(:merchandise_id=>m),:remote => true do %>
+                    <table>
+                      <tr>
+                        <td>
+                          <h3><%= m.merchandise_name %> : <%= m.price %></h3>
+                        </td>
+                        <td>
+                          <div class="AddToCart">
+                            <% form_tag line_items_path(:merchandise_id=>m),:remote => true do %>
                                   <%= number_field_tag "quantity_from_web", nil %>
                                   <%= submit_tag "Add to Cart" %>
-                  <% end %>
-                </div>
+                            <% end %>
+                          </div>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>
+                            <div class="Description">
+                                <%= sanitize(m.merchandise_detail) %>
+                            </div>
+                        </td>
+                      </tr>
+                    </table>
+
+
+
+                  </div>
+
+                  <!--<div class="PriceLine" >-->
+                    <!--<span class="price" ><%= m.price %></span>-->
+                  <!--</div>-->
+
 
             <% end %>
 

@@ -1,6 +1,6 @@
 class StoreController < ApplicationController
 
-  layout "toppage", :only => ["index"]
+  #layout "toppage", :only => ["index"]
   #layout "application", :only => ["category"]
 
   before_filter :need_login, :except => ["index"]
@@ -9,6 +9,7 @@ class StoreController < ApplicationController
     #@store_corrent_cart
     #@new_line_item w_merchandise = Merchandise.all
     #@cart = cu= LineItem.new
+    render :layout => 'toppage'
   end
 
   def category

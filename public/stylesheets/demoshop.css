@@ -1,30 +1,33 @@
 /*globe setting*/
 
-element.style {
-    background-attachment: scroll;
-    background-clip: border-box;
-    background-color: transparent;
-    background-image: none;
-    background-origin: padding-box;
-    background-position: 0 0;
-    background-size: auto auto;
-    cursor: default;
-}
-
 .Shopping {
-    font-family: Tahoma;
+    font-family: helvetica,monospace;
     font-size: 11px;
     margin: 0 auto;
+}
+
+form {
+    margin-left: 5px;
 }
 
 .OffWhite1Background {
     background-color: #FCFBF1;
 }
 
+/*store TopLine*/
+.Shopping .TopLine {
+    background-color: #545048;
+    display: block;
+    height: 10px;
+    line-height: 10px;
+    width: 100%;
+}
+
+
 /*shopping header*/
 .ShoppingHeader .Header {
-    background: url("../images/home/ShoppingHeaderBackground.gif") no-repeat scroll center top transparent;
-    height: 111px;
+   background: url("../images/home/ShoppingHeaderBackground.gif") no-repeat scroll center top transparent;
+   height: 111px;
     margin-left: auto;
     margin-right: auto;
     min-width: 990px;
@@ -33,26 +36,46 @@ element.style {
     width: 990px;
 }
 
-.ShoppingHeader .Header .Content .FindSection {
+.ShoppingHeader .Header .FindSection {
     float: left;
     height: 110px;
     width: 342px;
 }
 
-.ShoppingHeader .Header .Content .FindSection .Logo {
+.ShoppingHeader .Header .FindSection .logo{
     display: block;
     margin-left: 7px;
     margin-top: 21px;
 }
-.Header .Content .QuickShopPanel .QuickShopIcon {
+
+.ShoppingHeader .Header .MetaSction{
     float: left;
+    height: 110px;
+    width: 646px;
 }
 
-.ShoppingHeader .Header .Content .FindSection .QuickShopPanel {
+.ShoppingHeader .Header .MetaSction .TrolleyMeterContainer {
+    color: #414A36;
+    font-family: helvetica,serif;
+    font-size: 11px;
+}
+
+.ShoppingHeader .Header .MetaSction .TrolleyMeterContainer .TrolleySection{
+
+}
+
+.ShoppingHeader .Header .MetaSction .TrolleyMeterContainer .SaveMoneySection{
     float: left;
-    height: 38px;
-    margin-top: 1px;
-    width: 70px;
+    height: 32px;
+    margin-left: 2px;
+    margin-top: 73px;
+    padding-top: 6px;
+    text-align: center;
+    width: 110px;
+}
+
+.ShoppingHeader .Header .SiteMenuSection{
+    float: right;
 }
 
 /*body*/
@@ -65,22 +88,53 @@ element.style {
 }
 
 /*Navigator*/
-.DepartmentNavigatorContainer {
+.Shopping .Body .PageContent {
+    clear: both;
     padding-left: 0;
     padding-right: 0;
     width: 986px;
 }
 
-.DepartmentNavigatorContainer .DepartmentTabContent {
+.shopping .Body .PageContent .Navigator{
+   clear: both;
+
+}
+.DepartmentNavigatorContainer {
+    padding-left: 0;
+    padding-right: 0;
+    width: 986px;
+}
+.DepartmentTabContainer {
     float: left;
-    font-family: Trebuchet,sans-serif;
+    font-family: helvetica;
     font-size: 11px;
     height: 90px;
     position: relative;
+}
+
+.DepartmentNavigatorContainer .DepartmentTabContent {
+    background-color: #F0EFE0;
+    border-bottom: 2px solid #CCCEBC;
+    float: left;
+    font-family: helvetica;
+    font-size: 12px;
+    height: 88px;
+    margin-left: 2px;
+    padding-left: 2px;
+    padding-right: 2px;
+    position: relative;
+    width: 59px;
+}
+
+.DepartmentNavigatorContainer .DepartmentTabContent .DepartmentTabContentTop{
     text-align: center;
 }
 
-.DepartmentNavigatorContainer .SeperatorImage {
+.DepartmentNavigatorContainer .DepartmentTabContent .DepartmentTabContentTop{
+    text-align: center;
+}
+
+.DepartmentNavigatorContainer .DepartmentTabContent .SeparatorImage {
     background-color: #E7E9CF;
     display: block;
     float: left;
@@ -89,67 +143,51 @@ element.style {
 }
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+ /*content*/
+.content{
+    width: 750px;
+    padding-bottom: 30px;
+    padding-top: 10px;
+    float: left;
+}
 
 
 /*Accordion for category menu */
-dl
-{
-	min-width: 960px;
+dl{
+	min-width: 700px;
     width: 55em;
     padding-left: 1em;
     clear: both;
 }
-	dl dt
-	{
-		-webkit-border-radius: 5px;
-		-moz-border-radius: 5px;
-		border: 1px solid #cccccc;
-		margin: 0;
-        width: 55em;
-	}
-		dl dt a
-		{
-			color: #000000;
-			font-weight: bold;
-			text-decoration: none;
-			padding: 10px;
-			display: block;
-		}
-	dl dd
-	{
-		margin: 0;
-		height: 0;
-		overflow: hidden;
-		-webkit-transition: height 1s ease;
-        width: 58em;
-	}
-		dl dd p
-		{
-			padding: 10px;
-			margin: 0;
-		}
-	dl dd:target
-	{
-		height: auto;
-	}
+
+dl dt{
+	-webkit-border-radius: 5px;
+	-moz-border-radius: 5px;
+	border: 1px solid #cccccc;
+	margin: 0;
+    width: 68em;
+}
+dl dt a{
+	color: #000000;
+	font-weight: bold;
+	text-decoration: none;
+	padding: 10px;
+	display: block;
+}
+dl dd{
+	margin: 0;
+	height: 0;
+	overflow: hidden;
+	-webkit-transition: height 1s ease;
+    width: 68em;
+}
+dl dd p{
+	padding: 10px;
+	margin: 0;
+}
+dl dd:target{
+	height: auto;
+}
 
 @media (-webkit-transition) {
 	dl dd:target
@@ -158,10 +196,46 @@ dl
 	}
 }
 
-/*Styles for sidebar_A (left)*/
+/*merchandise entry*/
 
-.store .sidebar_a {
-  float: left;
+dl dd img{
+    clear: both;
+    float: left;
+    height: 70px;
+    width: 60px;
+}
+
+dl dd table{
+    padding-left: 5px;
+
+}
+
+dl dd h3{
+   width: 180px;
+}
+
+dl dd .AddToCart{
+    font-size:    x-small;
+    text-align:   center;
+    width: 150px;
+}
+
+dl dd .AddToCart #quantity_from_web{
+    width: 30px;
+}
+
+dl dd .AddToCart .button{
+    width: 50px;
+}
+
+dl dd .Dscreption{
+   width: 280px;
+}
+
+/*Styles for naviBar_A (Top)*/
+
+.store .NaviBar_a {
+  float: right;
   padding-top: 1em;
   padding-left: 1em;
   padding-bottom: 1em;
@@ -173,34 +247,39 @@ dl
 
 /* Styles for the cart in sidebar (right) */
 
-.cart{
+#cart{
   float: right;
-  padding-top: 5em;
+  padding-top: 3em;
   padding-left: 1em;
   padding-bottom: 1em;
 }
-.cart table {
+#cart table {
   width: 20em;
   font-size: smaller;
   color:     black;
   padding-top: 1em;
 }
 
-.cart table {
+#cart table {
   border-top:    1px dotted #595;
   border-bottom: 1px dotted #595;
   margin-bottom: 10px;
 }
 
-.cart .button_to{
+#cart .button_to{
   float: right
 }
 
-/*Styles for footer*/
 
-.footer{
-  padding-top: 3em;
-  padding-bottom: 1em;
-  text-align: center;
+
+/*store footer panel*/
+.FooterPanel {
+    background-color: #BCB6AF;
+    border-top: 1px solid #89847D;
+    clear: both;
+    height: 100%;
 }
-
+.FooterPanel .InfoMenuContent table {
+    margin-left: auto;
+    margin-right: auto;
+}

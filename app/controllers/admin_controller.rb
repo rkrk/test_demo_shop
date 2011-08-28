@@ -4,7 +4,6 @@ class AdminController < ApplicationController
   #@@order_today_h = Hash::new
   #@@purchase_today_h = Hash::new
 
-
   def index
     @total_orders = Order.count
     @total_users = User.count
@@ -15,7 +14,6 @@ class AdminController < ApplicationController
   #def order_today
   #  @order_today = Order.today
   #end
-  
 
   def order_today
 
