@@ -1,5 +1,5 @@
 class OrdersController < ApplicationController
-
+  #layout "shopping"
   skip_before_filter :need_login, :only=>[:new, :create]
 
 
@@ -33,7 +33,7 @@ class OrdersController < ApplicationController
   def new
     @cart=current_cart
     if @cart.line_items.empty?
-      redirect_to store_url, :notice=> "Your cart is empry!"
+      redirect_to "/store/category/", :notice=> "Your cart is empry!"
       return
     end
     @order = Order.new

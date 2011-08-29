@@ -1,0 +1,19 @@
+<%= "FAQ" %>
+
+<table>
+  <tbody>
+  <tr>
+    <td class="LeftCell">
+      <div class="InfoContent AboutUs">
+        <% 20.times do |t| %>
+            <ul><%= link_to "some question of #{t}" %></ul>
+        <% end  %>
+      </div>
+    </td>
+    <td class="RightCell">
+      <%= image_tag "/images/home/FAQ_MainImage.jpg" %> <br>
+      <%= mail_to "surport@demoshop.com" %>
+    </td>
+  </tr>
+  </tbody>
+</table>

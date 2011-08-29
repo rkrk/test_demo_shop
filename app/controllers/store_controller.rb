@@ -1,7 +1,6 @@
 class StoreController < ApplicationController
 
-  #layout "toppage", :only => ["index"]
-  #layout "application", :only => ["category"]
+  layout "shopping"
 
   before_filter :need_login, :except => ["index"]
 

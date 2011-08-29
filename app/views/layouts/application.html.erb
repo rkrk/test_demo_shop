@@ -1,42 +1,32 @@
 <!DOCTYPE html>
 <html>
 <head>
+  <link rel="shortcut icon" href="/favicon.ico" type="image/ico" />
   <title>DemoShop</title>
-  <%= stylesheet_link_tag "demoshop", :media=>"all" %>
+  <%= stylesheet_link_tag "common", :media=>"all" %>
   <%= javascript_include_tag :defaults %>
   <%= csrf_meta_tag %>
 </head>
 
-<body class="Shopping OffWhite1Background">
-
-
-  <div class="TopLine"></div>
-
-
-  <div class="ShoppingHeader">
+<body class="common">
+  <div class="SiteHeader_common">
     <div id="HeaderContainer" class="Header">
 
-      <div class="FindSection">
-        <div class="logo">
-          <%= link_to(image_tag("/images/home/ShoppingLogo.gif"), store_path, {:class => "Logo"}) %>
-        </div>
-        <div class="QuickShopPanel">
-          <%= image_tag "/images/home/QuickShopIconHeader.gif" %>
+      <%= link_to(image_tag("/images/home/ShoppingLogo.gif"), store_path, {:class => "Logo"}) %>
+
+      <div id="WelcomeSection" class="WelcomeSection">
+        <div class="WelcomeMSG">Welcome, (<%= link_to "Log in", login_url%>)</div>
+        <div class="CartLogo">
+          <table>
+            <tr>
+              <td class="LogoCell"><%= image_tag "/images/home/CartLogo.gif" %></td>
+              <td class="DataCell"><span>0.0</span></td>
+            </tr>
+          </table>
         </div>
       </div>
-
-      <div class="MeterSection">
-        <div class="TrolleyMeterContainer">
-          <div class="TrolleySection"></div>
-          <div class="SaveMoneySection"></div>
-          <div class="SaveHealthSection"></div>
-          <div class="CheckoutSection"></div>
-        </div>
-
-      </div>
-
-      <div class="SiteMenuSection">
-        <div class="NaviBar_a">
+      <div id="SiteMenuSection" class="SiteMenuSection">
+        <div id="SiteMenuContainer" class="SiteMenuContainer">
           <%= link_to 'Register', "/register/" %> -
           <%= link_to 'login', login_url %>
 
@@ -53,80 +43,107 @@
 
             <%= button_to 'Logout', logout_path, :method => :delete %>
           <% end %>
+
         </div>
       </div>
-
     </div>
   </div>
 
-  <div class="body">
-    <div class="HallTop">
-      <div id="DepartmentNavigatorContainer" class="DepartmentNavigatorContainer">
-        <% 15.times do %>
-          <div id="DepartmentTabContent" class="DepartmentTabContent">
-            <div id="DepartmentTabContentTop" class="DepartmentTabContentTop">
-               <%= image_tag "/images/home/Icon13.gif" %>
+
+
+  <div class="PageBox">
+    <table class="PageTable">
+      <tbody>
+      <tr class="SubHeaderCell">
+        <td class="TitleCell">
+          <h1><%= %></h1>
+        </td>
+        <td class="ButtonCell"></td>
+      </tr>
+      <tr>
+        <td class="ContentCell">
+          <%= yield %>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <div class="FooterCell">
+            <div class="HorizontalSeparator"></div>
+            <div id="XPollinationContainer" class="XPollinationContainer">
+              <div class="CategoryPanel">
+                <span class="SectionTitle">Top Category</span>
+                <% Category.all.each do |c| %>
+                  <%= link_to "#{c.category}","/categories/#{c.id}" %>
+                <% end %>
+                <span><%= link_to "All Category", "/categories/", {:class=>"AllItemsLink"} %></span>
+              </div>
+              <div class="BrandPanel">
+                <span class="SectionTitle">Top Brand</span>
+                <%= link_to "dummy","/dummy" %>
+                <%= link_to "dummy","/dummy" %>
+                <%= link_to "dummy","/dummy" %>
+                <span><%= link_to "All Brand", "/brands/", {:class=>"AllItemsLink"} %></span>
+              </div>
+              <div class="LearnMorePanel">
+                <span class="SectionTitle">Learn More</span>
+                <%= link_to "Help Center","/common/faq" %>
+                <%= link_to "Promotion","/common/promotion"  %>
+                <%= link_to "Watch Demo","/common/demo"%>
+                <%= link_to "What's New","/common/news" %>
+                <%= link_to "Loyalty Points", "/common/point" %>
+                <%= link_to "Vouchers","/common/voucher"  %>
+              </div>
+              <div class="AboutPanel">
+                <span class="SectionTitle">About</span>
+                <%= link_to "About us","/common/about_us" %>
+                <%= link_to "Testimonials", "/common/testimonial" %>
+                <%= link_to "Advertise", "/common/advertise" %>
+                <%= link_to "Affiliate", "/common/affiliate" %>
+              </div>
+              <div class="ContactPanel">
+                <span class="SectionTitle">Contact</span>
+                <%= link_to "Contract us","/common/contact" %>
+                <%= mail_to "surport@demoshop.com" %>
+              </div>
             </div>
-            <div id="DepartmentTabMain" class="DepartmentTabMain">
-              <%= link_to "Favourites" ,"/store/Favourites" %>
-            </div>
+
           </div>
-        <% end  %>
-    </div>
-
-    <div id="ShoppingPageContent" class="PageContent">
-
-      <div class="Navigator"></div>
-
-      <div id="content" class="content">
-        <%= yield %>
-      </div>
-
-    </div>
-
+        </td>
+      </tr>
+      </tbody>
+    </table>
   </div>
 
-  <% if @cart %>
-    <%= hidden_div_if(@cart.line_items.empty?, :id => "cart") do %>
-    <%= render @cart%>
-    <% end %>
-  <%end%>
 
 
+
+  <div class="FooterPanel">
+    <div class="InfoMenuContent">
+
+    <table class="InfoMenu" >
+      <tr>
+        <td>
+         <%= link_to "About us","/common/about_us" %> |
+         <%= link_to "Security","/common/security"  %> |
+         <%= link_to "Privacy","/common/privacy"   %> |
+         <%= link_to "Advertise","/common/advertise" %> |
+         <%= link_to "Site map","/common/sitemap"  %> |
+         <%= link_to "FAQ","/common/faq"        %> |
+         <%= link_to "Contact us","/common/contact" %>
+        </td>
+      </tr>
+      <tr></tr>
+      <tr></tr>
+      <tr></tr>
+      <tr>
+        <td>© TestDemoShop Limited, 2011-2011. All rights reserved.</td>
+      </tr>
+    </table>
+    </div>
   </div>
 
-<div class="FooterPanel">
- <div class="InfoMenuContent">
 
-   <table class="InfoMenu">
-   <tr>
-     <td>
-         <%= link_to "About us"  %> |
-         <%= link_to "Security"  %> |
-         <%= link_to "Privacy"   %> |
-         <%= link_to "Advertise" %> |
-         <%= link_to "Site map"  %> |
-         <%= link_to "FAQ"        %> |
-         <%= link_to "Contact us"%>
-     </td>
-   </tr>
-   <tr></tr>
-   <tr></tr>
-   <tr></tr>
-   <tr>
-     <td>© TestDemoShop Limited, 2011-2011. All rights reserved.</td>
-   </tr>
- </table>
- </div>
-</div>
 
 </body>
-
-
-
-
-
-
-
-
 </html>
+

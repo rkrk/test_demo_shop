@@ -1,5 +1,7 @@
 DemoShop::Application.routes.draw do
   
+  resources :categories
+
   get "register/index"
 
   get "register/confirm"

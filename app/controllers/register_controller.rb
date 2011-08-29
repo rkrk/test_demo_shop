@@ -1,6 +1,7 @@
 class RegisterController < ApplicationController
 skip_before_filter :need_login
 
+
   def index
 	 @user = User.new
   end
