@@ -3,12 +3,10 @@ class OrdersController < ApplicationController
   skip_before_filter :need_login, :only=>[:new, :create]
 
 
-    # GET /orders
-    # GET /orders.xml
+  # GET /orders
+  # GET /orders.xml
   def index
-    (params[:today] == nil )? @orders = Order.page(params[:page]).per(10) : @order = Order.today.page(params[:page]).per(10)
-      #paginate :page=>params[:page], :order=>'created_at desc', :per_page=>10
-
+    (params[:today] == nil) ? @orders = Order.page(params[:page]).per(10) : @order = Order.today.page(params[:page]).per(10)
 
     respond_to do |format|
       format.html # index.html.erb
@@ -16,8 +14,8 @@ class OrdersController < ApplicationController
     end
   end
 
-    # GET /orders/1
-    # GET /orders/1.xml
+  # GET /orders/1
+  # GET /orders/1.xml
   def show
     @order = Order.find(params[:id])
     @cart =current_cart
@@ -28,8 +26,8 @@ class OrdersController < ApplicationController
     end
   end
 
-    # GET /orders/new
-    # GET /orders/new.xml
+  # GET /orders/new
+  # GET /orders/new.xml
   def new
     @cart=current_cart
     if @cart.line_items.empty?
@@ -44,13 +42,13 @@ class OrdersController < ApplicationController
     end
   end
 
-    # GET /orders/1/edit
+  # GET /orders/1/edit
   def edit
     @order = Order.find(params[:id])
   end
 
-    # POST /orders
-    # POST /orders.xml
+  # POST /orders
+  # POST /orders.xml
   def create
     @order = Order.new(params[:order])
     @order.add_line_items_from_cart(current_cart)
@@ -59,7 +57,7 @@ class OrdersController < ApplicationController
       if @order.save
         Cart.destroy(session[:cart_id])
         session[:cart_id] = nil
-        format.html { redirect_to(store_url, :notice => 'Thank u for uer Order!') }
+        format.html { redirect_to("/store/category", :notice => 'Thank u for uer Order!') }
         format.xml { render :xml => @order, :status => :created, :location => @order }
       else
         format.html { render :action => "new" }
@@ -68,8 +66,8 @@ class OrdersController < ApplicationController
     end
   end
 
-    # PUT /orders/1
-    # PUT /orders/1.xml
+  # PUT /orders/1
+  # PUT /orders/1.xml
   def update
     @order = Order.find(params[:id])
 
@@ -84,8 +82,8 @@ class OrdersController < ApplicationController
     end
   end
 
-    # DELETE /orders/1
-    # DELETE /orders/1.xml
+  # DELETE /orders/1
+  # DELETE /orders/1.xml
   def destroy
     @order = Order.find(params[:id])
     @order.destroy
@@ -97,11 +95,9 @@ class OrdersController < ApplicationController
   end
 
 
-
   def today
     @order_today = Order.today
   end
-
 
 
 end

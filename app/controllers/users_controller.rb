@@ -1,6 +1,6 @@
 class UsersController < ApplicationController
 
-  skip_before_filter :need_login , :only => ["create"]
+  skip_before_filter :need_login, :only => ["create"]
 
   # GET /users
   # GET /users.xml
@@ -13,8 +13,8 @@ class UsersController < ApplicationController
     end
   end
 
-    # GET /users/1
-    # GET /users/1.xml
+  # GET /users/1
+  # GET /users/1.xml
   def show
     @user = User.find(params[:id])
 
@@ -24,29 +24,29 @@ class UsersController < ApplicationController
     end
   end
 
-    # GET /users/new
-    # GET /users/new.xml
+  # GET /users/new
+  # GET /users/new.xml
   def new
     @user = User.new
 
     respond_to do |format|
-      format.html 
+      format.html
       format.xml { render :xml => @user }
     end
   end
 
-    # GET /users/1/edit
+  # GET /users/1/edit
   def edit
     @user = User.find(params[:id])
   end
 
-    # POST /users
-    # POST /users.xml
+  # POST /users
+  # POST /users.xml
   def create
     @user = User.new(params[:user])
 
     respond_to do |format|
-      if @user.save &&  NoticeMailer.sendmail_register_confirm(@user).deliver
+      if @user.save && NoticeMailer.sendmail_register_confirm(@user).deliver
         format.html { redirect_to(store_url, :notice => "Thanks for your register! #{@user.name}") }
         format.xml { render :xml => @user, :status => :created, :location => @user }
       else
@@ -56,8 +56,8 @@ class UsersController < ApplicationController
     end
   end
 
-    # PUT /users/1
-    # PUT /users/1.xml
+  # PUT /users/1
+  # PUT /users/1.xml
   def update
     @user = User.find(params[:id])
 
@@ -72,9 +72,9 @@ class UsersController < ApplicationController
     end
   end
 
-    # DELETE /users/1
-    # DELETE /users/1.xml
-    # @return [Object]
+  # DELETE /users/1
+  # DELETE /users/1.xml
+  # @return [Object]
   def destroy
     @user = User.find(params[:id])
     begin

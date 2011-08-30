@@ -1,4 +1,3 @@
-
 <% if notice %>
     <p id="notice"><%= notice %></p>
 <% end %>
@@ -21,28 +20,28 @@
     <th></th>
   </tr>
 
-<% @orders.each do |order| %>
-  <tr>
-    <td><%= order.name %></td>
-    <td><%= order.address %></td>
-    <td><%= order.email %></td>
-    <td><%= order.phone %></td>
-    <td><%= order.cell_phone %></td>
-    <td><%= order.pay_type %></td>
-    <td><%= order.deli_day%></td>
-    <td><%= order.deli_time%></td>
-    <td><%= order.status%></td>
-    <td><%= link_to 'Check order', {:controller => "admin" , :action => "check_order" , :order_id => order.id} %></td>
-    <td><%= link_to 'Show', order %></td>
-    <td><%= link_to 'Edit', edit_order_path(order) %></td>
-    <td><%= link_to 'Destroy', order, :confirm => 'Are you sure?', :method => :delete %></td>
-  </tr>
-<% end %>
+  <% @orders.each do |order| %>
+      <tr>
+        <td><%= order.name %></td>
+        <td><%= order.address %></td>
+        <td><%= order.email %></td>
+        <td><%= order.phone %></td>
+        <td><%= order.cell_phone %></td>
+        <td><%= order.pay_type %></td>
+        <td><%= order.deli_day %></td>
+        <td><%= order.deli_time %></td>
+        <td><%= order.status %></td>
+        <td><%= link_to 'Check order', {:controller => "admin", :action => "check_order", :order_id => order.id} %></td>
+        <td><%= link_to 'Show', order %></td>
+        <td><%= link_to 'Edit', edit_order_path(order) %></td>
+        <td><%= link_to 'Destroy', order, :confirm => 'Are you sure?', :method => :delete %></td>
+      </tr>
+  <% end %>
 </table>
 
 <%= paginate @orders %>
 
-<br />
+<br/>
 <!--<%= link_to 'New Order', new_order_path %>-->
 
 <%= link_to 'Check all Order of today', {:controller => "admin", :action => "check_today_order"} %>

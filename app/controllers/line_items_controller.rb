@@ -3,8 +3,8 @@ class LineItemsController < ApplicationController
   skip_before_filter :need_login, :only=>:create
 
 
-    # GET /line_items
-    # GET /line_items.xml
+  # GET /line_items
+  # GET /line_items.xml
   def index
     @line_items = LineItem.all
 
@@ -14,8 +14,8 @@ class LineItemsController < ApplicationController
     end
   end
 
-    # GET /line_items/1
-    # GET /line_items/1.xml
+  # GET /line_items/1
+  # GET /line_items/1.xml
   def show
     @line_item = LineItem.find(params[:id])
 
@@ -25,8 +25,8 @@ class LineItemsController < ApplicationController
     end
   end
 
-    # GET /line_items/new
-    # GET /line_items/new.xml
+  # GET /line_items/new
+  # GET /line_items/new.xml
   def new
     @line_item = LineItem.new
 
@@ -36,18 +36,18 @@ class LineItemsController < ApplicationController
     end
   end
 
-    # GET /line_items/1/edit
+  # GET /line_items/1/edit
   def edit
     @line_item = LineItem.find(params[:id])
   end
 
-    # POST /line_items
-    # POST /line_items.xml
+  # POST /line_items
+  # POST /line_items.xml
   def create
     @cart = current_cart
     merchandise = Merchandise.find(params[:merchandise_id])
-    quantity = (params[:quantity_from_web].to_i == 0 ) ? 1 : params[:quantity_from_web].to_i
-    @line_item = @cart.add_product(merchandise.id,quantity)
+    quantity = (params[:quantity_from_web].to_i == 0) ? 1 : params[:quantity_from_web].to_i
+    @line_item = @cart.add_product(merchandise.id, quantity)
 
     respond_to do |format|
       if @line_item.save
@@ -61,8 +61,8 @@ class LineItemsController < ApplicationController
     end
   end
 
-    # PUT /line_items/1
-    # PUT /line_items/1.xml
+  # PUT /line_items/1
+  # PUT /line_items/1.xml
   def update
     @line_item = LineItem.find(params[:id])
 
@@ -77,8 +77,8 @@ class LineItemsController < ApplicationController
     end
   end
 
-    # DELETE /line_items/1
-    # DELETE /line_items/1.xml
+  # DELETE /line_items/1
+  # DELETE /line_items/1.xml
   def destroy
     @line_item = LineItem.find(params[:id])
     @line_item.destroy

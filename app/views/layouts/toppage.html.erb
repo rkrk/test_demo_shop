@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <link rel="shortcut icon" href="/favicon.ico" type="image/ico" />
+  <link rel="shortcut icon" href="/favicon.ico" type="image/ico"/>
   <title>DemoShop</title>
   <%= stylesheet_link_tag "toppage", :media=>"all" %>
   <%= javascript_include_tag :defaults %>
@@ -10,109 +10,84 @@
 
 <body class="store">
 
-  <div class="TopLine">
+<div class="TopLine">
 
+</div>
+
+
+<div class="HomepageHeader">
+  <div class="logo">
+    <%= image_tag("/images/home/test_demo_shop_logo.gif") %>
   </div>
 
-
-  <div class="HomepageHeader" >
-    <div class="logo">
-      <%= image_tag("/images/home/test_demo_shop_logo.gif") %>
-    </div>
-
-    <span class="buttons" >
+    <span class="buttons">
         <%= link_to image_tag("/images/home/Sign_in.gif"), login_url %>
-        <%= link_to image_tag("/images/home/Register.gif"), "/register/" %>
+      <%= link_to image_tag("/images/home/Register.gif"), "/register/" %>
     </span>
 
-    <!--<%= "Online Supermarket" %>-->
+  <!--<%= "Online Supermarket" %>-->
+
+</div>
+
+<div class="MainBody">
+  <div class="RightSidePanel">
 
   </div>
-
-  <div class="MainBody">
-    <div class="RightSidePanel">
-
+  <div class="leftPanel">
+    <div class="Title">
+      <%= image_tag("/images/home/Title1.gif") %>
     </div>
-    <div class="leftPanel">
-      <div class="Title">
-        <%= image_tag("/images/home/Title1.gif") %>
-      </div>
-      <div class="SubTitle">
-        SAVE UP TO 35% on your shopping<br>
-        £1,000 a year!
-      </div>
-      <div class="Text">
-        TestDemoShop is a completely FREE website <br>
-        a completely FREE website <br>
-        a completely FREE website <br>
-        a completely FREE website <br>
-        <span id="TryIt">Try it now!</span>
-      </div>
-
-      <div class="ButtonPanel">
-        <%= image_tag("/images/home/start_shopping.jpg") %>
-      </div>
-
-      <div class="BrowsePane">
-        <%= link_to "Browse Around" %>
-      </div>
-
+    <div class="SubTitle">
+      SAVE UP TO 35% on your shopping<br>
+      £1,000 a year!
+    </div>
+    <div class="Text">
+      TestDemoShop is a completely FREE website <br>
+      a completely FREE website <br>
+      a completely FREE website <br>
+      a completely FREE website <br>
+      <span id="TryIt">Try it now!</span>
     </div>
 
-    <div class="bottomPanel">
-      <div class="VideoPanel">
-        <%= link_to((image_tag "/images/home/Movie_icon.gif" ), "/store/movie") %>
-      </div>
-      <div class="StoreLogosPanel">
-        <%= image_tag("/images/home/Sainsbury_logo.gif") %>
-      </div>
+    <div class="ButtonPanel">
+      <%= image_tag("/images/home/start_shopping.jpg") %>
     </div>
 
-
-    <div id="AdContainer" class="MainContentDartAd">
-      <div class="DartAdPlaceHolderHomePageAdLeftPrompt" id="DartAdContainer_1">
-		<%= image_tag "/images/home/Advertisement.gif" %>
-        <%= image_tag "/images/home/ad.jpg" %>
-	  </div>
-    </div>
-
-
-    <div id="PressPanel" class="PressPanel">
-      <div><span><%= image_tag "/images/home/Telegraph_logo.gif" %></span></div>
-      <div><span><%= image_tag "/images/home/Glamour_logo.gif" %></span></div>
-      <div><span><%= image_tag "/images/home/Times_logo.gif" %></span></div>
+    <div class="BrowsePane">
+      <%= link_to "Browse Around" %>
     </div>
 
   </div>
 
-
-  <div class="FooterPanel">
-    <div class="InfoMenuContent">
-
-    <table class="InfoMenu" border="0">
-      <tr>
-        <td>
-          <%= link_to "About us","/common/about_us" %> |
-          <%= link_to "Security","/common/security"  %> |
-          <%= link_to "Privacy","/common/privacy"   %> |
-          <%= link_to "Advertise","/common/advertise" %> |
-          <%= link_to "Site map","/common/sitemap"  %> |
-          <%= link_to "FAQ","/common/faq"        %> |
-          <%= link_to "Contact us","/common/contact" %>
-        </td>
-      </tr>
-      <tr></tr>
-      <tr></tr>
-      <tr></tr>
-      <tr>
-        <td>© TestDemoShop Limited, 2011-2011. All rights reserved.</td>
-      </tr>
-    </table>
+  <div class="bottomPanel">
+    <div class="VideoPanel">
+      <%= link_to((image_tag "/images/home/Movie_icon.gif"), "/store/movie") %>
+    </div>
+    <div class="StoreLogosPanel">
+      <%= image_tag("/images/home/Sainsbury_logo.gif") %>
     </div>
   </div>
+
+
+  <div id="AdContainer" class="MainContentDartAd">
+    <div class="DartAdPlaceHolderHomePageAdLeftPrompt" id="DartAdContainer_1">
+      <%= image_tag "/images/home/Advertisement.gif" %>
+      <%= image_tag "/images/home/ad.jpg" %>
+    </div>
+  </div>
+
+
+  <div id="PressPanel" class="PressPanel">
+    <div><span><%= image_tag "/images/home/Telegraph_logo.gif" %></span></div>
+    <div><span><%= image_tag "/images/home/Glamour_logo.gif" %></span></div>
+    <div><span><%= image_tag "/images/home/Times_logo.gif" %></span></div>
+  </div>
+
+</div>
+
+<%= render '/layouts/footer' %>
 
 </body>
-
 
 
 </html>

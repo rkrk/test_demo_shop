@@ -10,68 +10,79 @@
 <body class="Shopping OffWhite1Background">
 
 
-  <div class="TopLine"></div>
+<div class="TopLine"></div>
 
 
-  <div class="ShoppingHeader">
-    <div id="HeaderContainer" class="Header">
+<div class="ShoppingHeader">
+  <div id="HeaderContainer" class="Header">
 
-      <div class="FindSection">
-        <div class="logo">
-          <%= link_to(image_tag("/images/home/ShoppingLogo.gif"), store_path, {:class => "Logo"}) %>
-        </div>
-        <div class="QuickShopPanel">
-          <%= image_tag "/images/home/QuickShopIconHeader.gif" %>
-        </div>
+    <div class="FindSection">
+      <div class="logo">
+        <%= link_to(image_tag("/images/home/ShoppingLogo.gif"), store_path, {:class => "Logo"}) %>
       </div>
-
-      <div class="MeterSection">
-        <div class="TrolleyMeterContainer">
-          <div class="TrolleySection"></div>
-          <div class="SaveMoneySection"></div>
-          <div class="SaveHealthSection"></div>
-          <div class="CheckoutSection"></div>
-        </div>
-
+      <div class="QuickShopPanel">
+        <%= image_tag "/images/home/QuickShopIconHeader.gif" %>
       </div>
+    </div>
 
-      <div class="SiteMenuSection">
-        <div class="NaviBar_a">
-          <%= link_to 'Register', "/register/" %> -
-          <%= link_to 'login', login_url %>
-
-          <% if session[:user_id] %>
-            - <%= link_to 'Category', "/store/category/"%> -
-            <%= link_to 'Order history', "/store/order_history" %><br>
-
-            <% if User.find(session[:user_id]).role == "admin" %>
-              <%= link_to 'Orders', orders_path %> -
-              <%= link_to 'Order Today', "/admin/order_today" %><br>
-              <%= link_to 'Merchandises', merchandises_path %> -
-              <%= link_to 'Users', users_path %>
-            <% end %>
-
-            <%= button_to 'Logout', logout_path, :method => :delete %>
-          <% end %>
-        </div>
+    <div class="MeterSection">
+      <div class="TrolleyMeterContainer">
+        <div class="TrolleySection"></div>
+        <div class="SaveMoneySection"></div>
+        <div class="SaveHealthSection"></div>
+        <div class="CheckoutSection"></div>
       </div>
 
     </div>
-  </div>
 
-  <div class="body">
-    <div class="HallTop">
-      <div id="DepartmentNavigatorContainer" class="DepartmentNavigatorContainer">
-        <% 15.times do %>
+    <div class="SiteMenuSection">
+      <div class="NaviBar_a">
+        <%= link_to 'Register', "/register/" %> -
+        <%= link_to 'login', login_url %>
+
+        <% if session[:user_id] %>
+            - <%= link_to 'Category', "/store/category/" %> -
+            <%= link_to 'Order history', "/store/order_history" %>
+            <br>
+
+            <% if User.find(session[:user_id]).role == "admin" %>
+                <%= link_to 'Orders', orders_path %> -
+                <%= link_to 'Order Today', "/admin/order_today" %>
+                <br>
+
+                <%= link_to 'Merchandises', merchandises_path %> -
+                <%= link_to 'Users', users_path %>
+            <% end %>
+
+            <%= button_to 'Logout', logout_path, :method => :delete %>
+        <% end %>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<div class="body">
+  <div class="HallTop">
+    <div id="DepartmentNavigatorContainer" class="DepartmentNavigatorContainer">
+      <% 1.times do %>
           <div id="DepartmentTabContent" class="DepartmentTabContent">
             <div id="DepartmentTabContentTop" class="DepartmentTabContentTop">
-               <%= image_tag "/images/home/Icon13.gif" %>
+              <%= image_tag "/images/home/Icon13.gif" %>
             </div>
             <div id="DepartmentTabMain" class="DepartmentTabMain">
-              <%= link_to "Favourites" ,"/store/Favourites" %>
+              <%= link_to "Favourites", "/store/Favourites" %>
             </div>
           </div>
-        <% end  %>
+      <% end %>
+      <% 14.times do %>
+          <div id="DepartmentTabContent" class="DepartmentTabContent">
+            <div id="DepartmentTabContentTop" class="DepartmentTabContentTop">
+            </div>
+            <div id="DepartmentTabMain" class="DepartmentTabMain">
+            </div>
+          </div>
+      <% end %>
     </div>
 
     <div id="ShoppingPageContent" class="PageContent">
@@ -87,46 +98,17 @@
   </div>
 
   <% if @cart %>
-    <%= hidden_div_if(@cart.line_items.empty?, :id => "cart") do %>
-    <%= render @cart%>
-    <% end %>
-  <%end%>
+      <%= hidden_div_if(@cart.line_items.empty?, :id => "cart") do %>
+          <%= render @cart %>
+      <% end %>
+  <% end %>
 
 
-  </div>
-
-<div class="FooterPanel">
- <div class="InfoMenuContent">
-
-   <table class="InfoMenu">
-   <tr>
-     <td>
-         <%= link_to "About us","/common/about_us" %> |
-         <%= link_to "Security","/common/security"  %> |
-         <%= link_to "Privacy","/common/privacy"   %> |
-         <%= link_to "Advertise","/common/advertise" %> |
-         <%= link_to "Site map","/common/sitemap"  %> |
-         <%= link_to "FAQ","/common/faq"        %> |
-         <%= link_to "Contact us","/common/contact" %>
-     </td>
-   </tr>
-   <tr></tr>
-   <tr></tr>
-   <tr></tr>
-   <tr>
-     <td>© TestDemoShop Limited, 2011-2011. All rights reserved.</td>
-   </tr>
- </table>
- </div>
 </div>
 
+<%= render '/layouts/footer' %>
+
 </body>
-
-
-
-
-
-
 
 
 </html>

@@ -1,55 +1,50 @@
 <% if notice %>
-<p id="notice" ><%= notice %></p>
+    <p id="notice"><%= notice %></p>
 <% end %>
 
 
-<% @category.each do |c|  %>
-  <div class="" >
-  <dl>
-    <dt><%=link_to "#{c.category}", "/store/category/##{c.category}" %></dt>
-    <%= raw "<dd id = #{c.category} >"%>
+<% @category.each do |c| %>
+    <div class="">
+      <dl>
+        <dt><%= link_to "#{c.category}", "/store/category/##{c.category}" %></dt>
+        <%= raw "<dd id = #{c.category} >" %>
         <% @store_show_merchandise.each do |m| %>
-            <% if (Time.now.month >= m.production_month_from && Time.now.month <= m.production_month_to && m.category == c.category )  %>
+            <% if (Time.now.month >= m.production_month_from && Time.now.month <= m.production_month_to && m.category == c.category) %>
 
-                  <div class="Entry" >
-                    <%= image_tag (m.image_url) %>
-                    <table>
-                      <tr>
-                        <td>
-                          <h3><%= m.merchandise_name %> : <%= m.price %></h3>
-                        </td>
-                        <td>
-                          <div class="AddToCart">
-                            <% form_tag line_items_path(:merchandise_id=>m),:remote => true do %>
-                                  <%= number_field_tag "quantity_from_web", nil %>
-                                  <%= submit_tag "Add to Cart" %>
-                            <% end %>
-                          </div>
-                        </td>
-                      </tr>
-                      <tr>
-                        <td>
-                            <div class="Description">
-                                <%= sanitize(m.merchandise_detail) %>
-                            </div>
-                        </td>
-                      </tr>
-                    </table>
+                <div class="Entry">
+                  <%= image_tag (m.image_url) %>
+                  <table>
+                    <tr>
+                      <td>
+                        <h3><%= m.merchandise_name %> : <b class="price"><%= m.price %></b> <b class="PromotedPrice"><%= m.promoted_price %></b> <span>/<%= m.unit %></span></h3>
+                      </td>
+                      <td>
+                        <div class="AddToCart">
+                          <% form_tag line_items_path(:merchandise_id=>m), :remote => true do %>
+                              <%= number_field_tag "quantity_from_web", nil %>
+                              <%= submit_tag "Add to Cart" %>
+                          <% end %>
+                        </div>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>
+                        <div class="Description">
+                          <%= sanitize(m.merchandise_detail) %>
+                        </div>
+                      </td>
+                    </tr>
+                  </table>
 
 
-
-                  </div>
-
-                  <!--<div class="PriceLine" >-->
-                    <!--<span class="price" ><%= m.price %></span>-->
-                  <!--</div>-->
+                </div>
 
 
             <% end %>
 
         <% end %>
-    <%= raw "<dd>" %>
-  </dl>
-</div>
+        <%= raw "<dd>" %>
+      </dl>
+    </div>
 
 <% end %>

@@ -1,9 +1,18 @@
 /*globe setting*/
 
+#notice{
+    font-family: Helvetica,Arial,Verdana, sans-serif;
+    font-size: 10px;
+    font-weight: bolder;
+    color: red;
+    margin: 0;
+}
+
 .Shopping {
-    font-family: helvetica,monospace;
+    font-family:  Arial,Helvetica,Verdana, sans-serif;
     font-size: 11px;
-    margin: 0 auto;
+    margin: 0;
+    min-width: 996px;
 }
 
 form {
@@ -16,7 +25,7 @@ form {
 
 /*store TopLine*/
 .Shopping .TopLine {
-    background-color: #545048;
+    /*background-color: #545048;*/
     display: block;
     height: 10px;
     line-height: 10px;
@@ -100,7 +109,7 @@ form {
 
 }
 .DepartmentNavigatorContainer {
-    padding-left: 0;
+    padding-left: 5px;
     padding-right: 0;
     width: 986px;
 }
@@ -132,6 +141,7 @@ form {
 
 .DepartmentNavigatorContainer .DepartmentTabContent .DepartmentTabContentTop{
     text-align: center;
+    padding-top: 5px;
 }
 
 .DepartmentNavigatorContainer .DepartmentTabContent .SeparatorImage {
@@ -208,6 +218,14 @@ dl dd img{
 dl dd table{
     padding-left: 5px;
 
+}
+
+dl dd table .price{
+  text-decoration: line-through;
+}
+
+dl dd table .PromotedPrice{
+  color: red
 }
 
 dl dd h3{

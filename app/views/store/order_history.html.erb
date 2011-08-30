@@ -1,8 +1,7 @@
-
 <% @order_history.each do |oh| %>
-  <li>
-    <%= link_to "#{oh.created_at}", {:controller => "store" ,:action => "show_lineitem_history",
-                                     :order_id => "#{oh.id}"}%>
-  </li>
+    <li>
+      <%= link_to "#{oh.created_at}", {:controller => "store", :action => "show_lineitem_history",
+                                       :order_id => "#{oh.id}"} %>
+    </li>
 <% end %>
 

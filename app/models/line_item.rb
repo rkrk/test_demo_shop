@@ -3,7 +3,7 @@ class LineItem < ActiveRecord::Base
   belongs_to :merchandise
   belongs_to :cart
 
-  def total_price
-    merchandise.price * quantity
+  def line_item_total_price
+    (merchandise.promoted_price == nil) ? (merchandise.price * quantity) : (merchandise.promoted_price * quantity)
   end
 end

@@ -10,8 +10,8 @@ class MerchandisesController < ApplicationController
     end
   end
 
-    # GET /store_show_merchandise/1
-    # GET /store_show_merchandise/1.xml
+  # GET /store_show_merchandise/1
+  # GET /store_show_merchandise/1.xml
   def show
     @merchandise = Merchandise.find(params[:id])
 
@@ -21,8 +21,8 @@ class MerchandisesController < ApplicationController
     end
   end
 
-    # GET /store_show_merchandise/new
-    # GET /store_show_merchandise/new.xml
+  # GET /store_show_merchandise/new
+  # GET /store_show_merchandise/new.xml
   def new
     @merchandise = Merchandise.new
 
@@ -32,13 +32,13 @@ class MerchandisesController < ApplicationController
     end
   end
 
-    # GET /store_show_merchandise/1/edit
+  # GET /store_show_merchandise/1/edit
   def edit
     @merchandise = Merchandise.find(params[:id])
   end
 
-    # POST /store_show_merchandise
-    # POST /store_show_merchandise.xml
+  # POST /store_show_merchandise
+  # POST /store_show_merchandise.xml
   def create
     @merchandise = Merchandise.new(params[:merchandise])
 
@@ -53,8 +53,8 @@ class MerchandisesController < ApplicationController
     end
   end
 
-    # PUT /store_show_merchandise/1
-    # PUT /store_show_merchandise/1.xml
+  # PUT /store_show_merchandise/1
+  # PUT /store_show_merchandise/1.xml
   def update
     @merchandise = Merchandise.find(params[:id])
 
@@ -69,8 +69,8 @@ class MerchandisesController < ApplicationController
     end
   end
 
-    # DELETE /store_show_merchandise/1
-    # DELETE /store_show_merchandise/1.xml
+  # DELETE /store_show_merchandise/1
+  # DELETE /store_show_merchandise/1.xml
   def destroy
     @merchandise = Merchandise.find(params[:id])
     @merchandise.destroy

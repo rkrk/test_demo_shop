@@ -1,12 +1,12 @@
 <% if line_item == @current_item %>
-  <tr id="current_item" >
+    <tr id="current_item">
 <% else %>
-  <tr>
+    <tr>
 <% end %>
 <!-- [end]'s position ?????!!!!!!-->
 
-    <td><%=line_item.merchandise.merchandise_name %>&times;<%=line_item.quantity%></td>
-    <td class="item_price" ><%= number_to_currency(line_item.total_price) %></td>
-    <td><%=link_to '×', line_item, :confirm => 'Are you sure?', :method => :delete %></td>
+<td><%= line_item.merchandise.merchandise_name %>&times;<%= line_item.quantity %></td>
+<td class="item_price"><%= number_to_currency(line_item.line_item_total_price) %></td>
+<td><%= link_to '×', line_item, :confirm => 'Are you sure?', :method => :delete %></td>
 
-  </tr>
+</tr>

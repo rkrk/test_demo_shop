@@ -6,7 +6,7 @@ class CategoriesController < ApplicationController
 
     respond_to do |format|
       format.html # index.html.erb
-      format.xml  { render :xml => @categories }
+      format.xml { render :xml => @categories }
     end
   end
 
@@ -17,7 +17,7 @@ class CategoriesController < ApplicationController
 
     respond_to do |format|
       format.html # show.html.erb
-      format.xml  { render :xml => @category }
+      format.xml { render :xml => @category }
     end
   end
 
@@ -28,7 +28,7 @@ class CategoriesController < ApplicationController
 
     respond_to do |format|
       format.html # new.html.erb
-      format.xml  { render :xml => @category }
+      format.xml { render :xml => @category }
     end
   end
 
@@ -45,10 +45,10 @@ class CategoriesController < ApplicationController
     respond_to do |format|
       if @category.save
         format.html { redirect_to(@category, :notice => 'Category was successfully created.') }
-        format.xml  { render :xml => @category, :status => :created, :location => @category }
+        format.xml { render :xml => @category, :status => :created, :location => @category }
       else
         format.html { render :action => "new" }
-        format.xml  { render :xml => @category.errors, :status => :unprocessable_entity }
+        format.xml { render :xml => @category.errors, :status => :unprocessable_entity }
       end
     end
   end
@@ -61,10 +61,10 @@ class CategoriesController < ApplicationController
     respond_to do |format|
       if @category.update_attributes(params[:category])
         format.html { redirect_to(@category, :notice => 'Category was successfully updated.') }
-        format.xml  { head :ok }
+        format.xml { head :ok }
       else
         format.html { render :action => "edit" }
-        format.xml  { render :xml => @category.errors, :status => :unprocessable_entity }
+        format.xml { render :xml => @category.errors, :status => :unprocessable_entity }
       end
     end
   end
@@ -77,7 +77,7 @@ class CategoriesController < ApplicationController
 
     respond_to do |format|
       format.html { redirect_to(categories_url) }
-      format.xml  { head :ok }
+      format.xml { head :ok }
     end
   end
 end

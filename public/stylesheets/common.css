@@ -5,7 +5,6 @@
     font-weight: bolder;
     color: red;
     margin: 0;
-    bor
 }
 
 .common{
@@ -49,6 +48,7 @@
 .common .SiteHeader_common .CartLogo{
     float:left;
     padding-left:20px;
+    /*text-decoration: blink;*/
 }
 
 .common .SiteHeader_common .Header .SiteMenuSection{
@@ -70,9 +70,12 @@
 .common .PageBox .PageTable {
     width: 994px;
 }
+.common .PageBox .PageTable .OrderForm{
+    width: 600px;
+}
 
 .common .PageBox .SubHeaderCell {
-    background: url("../images/home/AdminPageContentBackground.gif") repeat-y scroll center top transparent;
+    /*background: url("../images/home/AdminPageContentBackground.gif") repeat-y scroll center top transparent;*/
     vertical-align: top;
 }
 
@@ -88,7 +91,7 @@
 }
 
 .common .PageBox .PageTable .ContentCell{
-    padding-left: 30px;
+    padding-left: 20px;
     padding-bottom: 20px;
 }
 

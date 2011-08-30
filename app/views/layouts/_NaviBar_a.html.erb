@@ -1,0 +1,21 @@
+<div class="NaviBar_a">
+  <%= link_to 'Register', "/register/" %> -
+  <%= link_to 'login', login_url %>
+
+  <% if session[:user_id] %>
+      - <%= link_to 'Category', "/store/category/" %> -
+      <%= link_to 'Order history', "/store/order_history" %>
+      <br>
+
+      <% if User.find(session[:user_id]).role == "admin" %>
+          <%= link_to 'Orders', orders_path %> -
+          <%= link_to 'Order Today', "/admin/order_today" %>
+          <br>
+
+          <%= link_to 'Merchandises', merchandises_path %> -
+          <%= link_to 'Users', users_path %>
+      <% end %>
+
+      <%= button_to 'Logout', logout_path, :method => :delete %>
+  <% end %>
+</div>

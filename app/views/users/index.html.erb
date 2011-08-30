@@ -1,8 +1,8 @@
 <h1>Listing users</h1>
-	<% if notice %>
-		<p id="notice" ><%= notice %></p>
-	<% end %>
-	
+<% if notice %>
+    <p id="notice"><%= notice %></p>
+<% end %>
+
 <table>
   <tr>
     <th>User ID</th>
@@ -16,23 +16,23 @@
     <th></th>
   </tr>
 
-<% @users.each do |user| %>
-  <tr>
-    <td><%= user.user_email %></td>
-    <td><%= user.name %></td>
-    <!--<td><%= user.hashed_password %></td>-->
-    <!--<td><%= user.hashed_address %></td>-->
-    <td><%= user.role %></td>
-    <td><%= user.confirm %></td>
-    <td><%= link_to 'Confirm', {:controller => 'register',:action => 'confirm',:hash => user.hashed_address} %></td>
-    <td><%= link_to 'Show', user %></td>
-    <td><%= link_to 'Edit', edit_user_path(user) %></td>
-    <td><%= link_to 'Destroy', user, :confirm => 'Are you sure?', :method => :delete %></td>
-  </tr>
-<% end %>
+  <% @users.each do |user| %>
+      <tr>
+        <td><%= user.user_email %></td>
+        <td><%= user.name %></td>
+        <!--<td><%= user.hashed_password %></td>-->
+        <!--<td><%= user.hashed_address %></td>-->
+        <td><%= user.role %></td>
+        <td><%= user.confirm %></td>
+        <td><%= link_to 'Confirm', {:controller => 'register', :action => 'confirm', :hash => user.hashed_address} %></td>
+        <td><%= link_to 'Show', user %></td>
+        <td><%= link_to 'Edit', edit_user_path(user) %></td>
+        <td><%= link_to 'Destroy', user, :confirm => 'Are you sure?', :method => :delete %></td>
+      </tr>
+  <% end %>
 </table>
 
 <%= paginate @users %>
-<br />
+<br/>
 
 <%= link_to 'New User', new_user_path %>

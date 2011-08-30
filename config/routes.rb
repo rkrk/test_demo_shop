@@ -1,5 +1,5 @@
 DemoShop::Application.routes.draw do
-  
+
   resources :categories
 
   get "register/index"
@@ -7,7 +7,7 @@ DemoShop::Application.routes.draw do
   get "register/confirm"
 
   get 'admin' => 'admin#index'
-  
+
   controller :sessions do
     get 'login' => :new
     post 'login' => :create

@@ -1,0 +1,65 @@
+<%= "Delivery Timetable" %>
+
+<div id="DeliveryTimeTable" class="TimeTable">
+  <div class="TopText">some some some some some some</div>
+  <table id="DeliveryTable" class="DeliveryTable">
+    <tbody>
+    <tr class="TableHeader">
+      <th id="Side">Side</th>
+      <th>
+        <%= "Today" %>
+        <br>
+        <%= Time.now.strftime("%A") %>
+      </th>
+      <th>
+        <%= @tomorrow.strftime("%Y") %>-<%= @tomorrow.strftime("%m") %>
+        -<%= @tomorrow.strftime("%d") %>
+        <br>
+        <%= @tomorrow.strftime("%A") %>
+      </th>
+      <th>
+        <%= @day_after_2.strftime("%Y") %>-<%= @day_after_2.strftime("%m") %>
+        -<%= @day_after_2.strftime("%d") %>
+        <br>
+        <%= @day_after_2.strftime("%A") %>
+      </th>
+      <th>
+        <%= @day_after_3.strftime("%Y") %>-<%= @day_after_3.strftime("%m") %>
+        -<%= @day_after_3.strftime("%d") %>
+        <br>
+        <%= @day_after_3.strftime("%A") %>
+      </th>
+      <th>
+        <%= @day_after_4.strftime("%Y") %>-<%= @day_after_4.strftime("%m") %>
+        -<%= @day_after_4.strftime("%d") %>
+        <br>
+        <%= @day_after_4.strftime("%A") %>
+      </th>
+      <th>
+        <%= @day_after_5.strftime("%Y") %>-<%= @day_after_5.strftime("%m") %>
+        -<%= @day_after_5.strftime("%d") %>
+        <br>
+        <%= @day_after_5.strftime("%A") %>
+      </th>
+      <th>
+        <%= @day_after_6.strftime("%Y") %>-<%= @day_after_6.strftime("%m") %>
+        -<%= @day_after_6.strftime("%d") %>
+        <br>
+        <%= @day_after_6.strftime("%A") %>
+      </th>
+    </tr>
+    <% @deli_time.each do |dt| %>
+        <tr>
+          <td><%= "#{dt}" %></td>
+          <% @week.each do |t| %>
+              <% if t.strftime("%Y%m%d") == Time.now.strftime("%Y%m%d") %>
+                <td><%= "nil" %></td>
+              <% else  %>
+                <td><%= link_to "5$", "/store/category" %></td>
+              <% end  %>
+          <% end %>
+        </tr>
+    <% end %>
+    </tbody>
+  </table>
+</div>
