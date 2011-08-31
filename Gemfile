@@ -23,8 +23,10 @@ gem 'sqlite3'
 # gem 'sqlite3-ruby', :require => 'sqlite3'
 # gem 'aws-s3', :require => 'aws/s3'
 gem 'prawn'
-gem 'will_paginate'
+#gem 'will_paginate'
 gem 'kaminari'
+gem 'action_mailer_tls'
+
 
 gem 'sitemap_generator'
 

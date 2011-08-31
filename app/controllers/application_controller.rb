@@ -16,7 +16,7 @@ class ApplicationController < ActionController::Base
     login_user = User.find_by_id(session[:user_id])
     if login_user
       if login_user.confirm == false
-        redirect_to login_url, :notice => "Please confirm your account first!"
+        redirect_to login_url, :notice => t('confirm_account')
       end
       #if login_user.role == 'admin'
       #  render "/admin/index"
@@ -24,14 +24,14 @@ class ApplicationController < ActionController::Base
       #  render "/store/category"
       #end
     else
-      redirect_to login_url, :notice => "Please log in!"
+      redirect_to login_url, :notice => t('login_first')
     end
   end
 
   def need_admin
     login_user = User.find_by_id(session[:user_id])
     if !(login_user.role == "admin")
-      redirect_to login_url, :notice => "Please log in as an administrator!"
+      redirect_to login_url, :notice => t('login_as_an_admin')
     end
   end
 

@@ -15,7 +15,7 @@
     <%= link_to(image_tag("/images/home/ShoppingLogo.gif"), store_path, {:class => "Logo"}) %>
 
     <div id="WelcomeSection" class="WelcomeSection">
-      <div class="WelcomeMSG">Welcome, (<%= link_to "Log in", login_url %>)</div>
+      <div class="WelcomeMSG">Welcome, (<%= link_to t('application.login_link'), login_url %>)</div>
       <div class="CartLogo">
         <table>
           <tr>
@@ -27,24 +27,24 @@
     </div>
     <div id="SiteMenuSection" class="SiteMenuSection">
       <div class="NaviBar_a">
-        <%= link_to 'Register', "/register/" %> -
-        <%= link_to 'login', login_url %>
+        <%= link_to t('register'), "/register/" %> -
+        <%= link_to t('application.login_link'), login_url %>
 
         <% if session[:user_id] %>
-            - <%= link_to 'Category', "/store/category/" %> -
-            <%= link_to 'Order history', "/store/order_history" %>
+            - <%= link_to t('application.category'), "/store/category/" %> -
+            <%= link_to t('application.order_history'), "/store/order_history" %>
             <br>
 
             <% if User.find(session[:user_id]).role == "admin" %>
-                <%= link_to 'Orders', orders_path %> -
-                <%= link_to 'Order Today', "/admin/order_today" %>
+                <%= link_to t('orders'), orders_path %> -
+                <%= link_to t('application.order_today'), "/admin/order_today" %>
                 <br>
 
-                <%= link_to 'Merchandises', merchandises_path %> -
-                <%= link_to 'Users', users_path %>
+                <%= link_to t('merchandises'), merchandises_path %> -
+                <%= link_to t('users'), users_path %>
             <% end %>
 
-            <%= button_to 'Logout', logout_path, :method => :delete %>
+            <%= button_to t('application.logout'), logout_path, :method => :delete %>
         <% end %>
       </div>
     </div>
@@ -77,35 +77,35 @@
               <% Category.all.each do |c| %>
                   <%= link_to "#{c.category}", "/categories/#{c.id}" %>
               <% end %>
-              <span><%= link_to "All Category", "/categories/", {:class=>"AllItemsLink"} %></span>
+              <span><%= link_to t('application.all_category'), "/categories/", {:class=>"AllItemsLink"} %></span>
             </div>
             <div class="BrandPanel">
               <span class="SectionTitle">Top Brand</span>
               <%= link_to "dummy", "/dummy" %>
               <%= link_to "dummy", "/dummy" %>
               <%= link_to "dummy", "/dummy" %>
-              <span><%= link_to "All Brand", "/brands/", {:class=>"AllItemsLink"} %></span>
+              <span><%= link_to t('application.all_brand'), "/brands/", {:class=>"AllItemsLink"} %></span>
             </div>
             <div class="LearnMorePanel">
               <span class="SectionTitle">Learn More</span>
-              <%= link_to "Help Center", "/common/faq" %>
-              <%= link_to "Promotion", "/common/promotion" %>
-              <%= link_to "Watch Demo", "/common/demo" %>
-              <%= link_to "What's New", "/common/news" %>
-              <%= link_to "Loyalty Points", "/common/point" %>
-              <%= link_to "Vouchers", "/common/voucher" %>
+              <%= link_to t('application.help_center'), "/common/faq" %>
+              <%= link_to t('application.promotion'), "/common/promotion" %>
+              <%= link_to t('application.watch_demo'), "/common/demo" %>
+              <%= link_to t('application.whats_new'), "/common/news" %>
+              <%= link_to t('application.points'), "/common/point" %>
+              <%= link_to t('application.vouchers'), "/common/voucher" %>
             </div>
             <div class="AboutPanel">
               <span class="SectionTitle">About</span>
-              <%= link_to "About us", "/common/about_us" %>
-              <%= link_to "Testimonials", "/common/testimonial" %>
-              <%= link_to "Advertise", "/common/advertise" %>
-              <%= link_to "Affiliate", "/common/affiliate" %>
-              <%= link_to "DeliveryTimeTable", "/common/delivery_timetable" %>
+              <%= link_to t('application.About_us'), "/common/about_us" %>
+              <%= link_to t('application.Testimonials'), "/common/testimonial" %>
+              <%= link_to t('application.Advertise'), "/common/advertise" %>
+              <%= link_to t('application.Affiliate'), "/common/affiliate" %>
+              <%= link_to t('application.DeliveryTimeTable'), "/common/delivery_timetable" %>
             </div>
             <div class="ContactPanel">
               <span class="SectionTitle">Contact</span>
-              <%= link_to "Contract us", "/common/contact" %>
+              <%= link_to t('application.Contract_us'), "/common/contact" %>
               <%= mail_to "surport@demoshop.com" %>
             </div>
           </div>
